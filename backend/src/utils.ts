@@ -2,7 +2,7 @@
  * Generates a 6-character alphanumeric code in XXXXXX format
  * @returns A 6-character alphanumeric code in XXXXXX format
  */
-export const generatePodCode = (): string => {
+export const generateRoomCode = (): string => {
   const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   let code = "";
 
