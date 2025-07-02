@@ -1,9 +1,9 @@
 <script lang="ts">
-	import '../app.css';
-  import BackgroundImage from '../components/BackgroundImage.svelte';
+  import '../app.css';
+  import BackgroundImage from '$lib/components/BackgroundImage.svelte';
   import type { LayoutProps } from './$types';
 
-	let { children, data }: LayoutProps = $props();
+  let { children, data }: LayoutProps = $props();
 </script>
 
 <main class="min-w-screen min-h-screen flex flex-col items-center justify-center text-white relative">

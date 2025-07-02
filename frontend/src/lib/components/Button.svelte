@@ -1,35 +1,38 @@
 <script lang="ts">
-  interface Props {
+  import type { HTMLButtonAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLButtonAttributes {
     variant?: 'primary' | 'secondary',
-    children?: any,
     fullWidth?: boolean,
-    disabled?: boolean,
-    type?: HTMLButtonElement['type']
   }
 
   const {
     children,
-    disabled,
     fullWidth,
     variant = 'primary',
+    ...restProps
   }: Props = $props();
 </script>
 
 {#if variant === 'primary'}
   <button
-    class="font-bold py-2 px-4 rounded border transition-colors font-mono"
+    class="font-bold py-2 px-4 rounded border transition-colors font-mono text-center flex justify-center"
     class:w-full={fullWidth}
-    disabled={disabled}
+    {...restProps}
   >
-    {@render children()}
+    {#if children}
+      {@render children()}
+    {/if}
   </button>
 {:else}
   <button
-    class="font-bold py-2 px-4 rounded border transition-colors font-mono"
+    class="font-bold py-2 px-4 rounded border transition-colors font-mono text-center flex justify-center"
     class:w-full={fullWidth}
-    disabled={disabled}
+    {...restProps}
   >
-    {@render children()}
+    {#if children}
+      {@render children()}
+    {/if}
   </button>
 {/if}
 
